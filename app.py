@@ -12,7 +12,7 @@ def predict():
     if request.method == 'POST':
         height = request.form['height']
         print(height)
-        model = pickle.load(open('/workspaces/dsa_april19/model (1).pkl','rb'))
+        model = pickle.load(open('model (1).pkl','rb'))
         weight = model.predict([[float(height)]])
         print(weight)
     return render_template('prediction.html',weight=weight)
